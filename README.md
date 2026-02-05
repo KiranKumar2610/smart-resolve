@@ -5,7 +5,7 @@ It supports role-based access (USER / ADMIN), real-time complaint tracking, admi
 
 --> This project demonstrates backend architecture, security best practices, transactional data handling, and frontend integration.
 
-         ✨ FEATURES
+✨ FEATURES
 
 👤 USER FEATURES
 
@@ -35,7 +35,7 @@ Register & login with JWT authentication
 
 ->Change complaint status:
 
-    OPEN → IN_PROGRESS → RESOLVED / REJECTED
+OPEN → IN_PROGRESS → RESOLVED / REJECTED
 
 ->Email notification sent to user on status update
 
@@ -165,13 +165,64 @@ spring.datasource.password=YOUR_PASSWORD
 
 3️⃣ Email Configuration (Gmail)
 
+spring.datasource.url=jdbc:mysql://localhost:3306/smart_resolve
+
+spring.datasource.username=YOUR_USERNAME
+
+spring.datasource.password=YOUR_PASSWORD
+
+3️⃣ Email Configuration (Gmail)
+
+spring.mail.host=smtp.gmail.com
+
+spring.mail.port=587
+
+spring.mail.username=your_email@gmail.com
+
+spring.mail.password=app_password
+
+spring.mail.properties.mail.smtp.auth=true
+
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+⚠️ Use Gmail App Password, not your real password.
+
+4️⃣ Run Application
+mvn spring-boot:run
+
+Open:
+http://localhost:8080
 
 
+🧪ADMIN ACCOUNT SETUP
+
+Admins are created by updating role in database:
+
+UPDATE users SET role='ADMIN' WHERE email='admin@test.com';
 
 
+🚀 FUTURE IMPROVEMENTS
 
+REST API documentation (Swagger / OpenAPI)
 
+->Docker support
 
+->Unit & integration tests
+
+->Role-based UI rendering
+
+->Audit logs for admin actions
+
+👨‍💻 AUTHOR
+
+Kiran Kumar
+📧 Email: kirankumar.7b@gmail.com
+
+🔗 GitHub: https://github.com/KiranKumar2610
+
+⭐ If you like this project
+
+Give it a ⭐ on GitHub — it really helps!
 
 
 
