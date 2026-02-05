@@ -25,6 +25,8 @@ Register & login with JWT authentication
    
    ->Status (OPEN / IN_PROGRESS / RESOLVED / REJECTED)
 
+   
+
 🛠 ADMIN FEATURES
 
 ->Secure admin dashboard
@@ -47,6 +49,8 @@ Register & login with JWT authentication
    
    ->Resolved complaints
 
+   
+
 🔐 SECURITY
 
 
@@ -58,6 +62,8 @@ Register & login with JWT authentication
 ->Protected API routes
 
 ->Secure password hashing (BCrypt)
+
+
 
 🧱TECH STACK
 
@@ -93,6 +99,8 @@ Tools
 ->IntelliJ IDEA
 
 
+
+
 🏗 ARCHITECHTURE OVERVIEW
 
        Controller Layer
@@ -112,6 +120,7 @@ Tools
 ->JWT filter for stateless authentication
 
 ->Global exception handling
+
 
 
 
