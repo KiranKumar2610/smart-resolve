@@ -156,42 +156,33 @@ CREATE DATABASE smart_resolve;
 
 update application.properties:
 
-spring.datasource.url=jdbc:mysql://localhost:3306/smart_resolve
-
-spring.datasource.username=YOUR_USERNAME
-
-spring.datasource.password=YOUR_PASSWORD
+    spring.datasource.url=jdbc:mysql://localhost:3306/smart_resolve
+    spring.datasource.username=YOUR_USERNAME
+    spring.datasource.password=YOUR_PASSWORD
 
 
 3️⃣ Email Configuration (Gmail)
 
-spring.datasource.url=jdbc:mysql://localhost:3306/smart_resolve
-
-spring.datasource.username=YOUR_USERNAME
-
-spring.datasource.password=YOUR_PASSWORD
+    spring.datasource.url=jdbc:mysql://localhost:3306/smart_resolve
+    spring.datasource.username=YOUR_USERNAME
+    spring.datasource.password=YOUR_PASSWORD
 
 3️⃣ Email Configuration (Gmail)
 
-spring.mail.host=smtp.gmail.com
-
-spring.mail.port=587
-
-spring.mail.username=your_email@gmail.com
-
-spring.mail.password=app_password
-
-spring.mail.properties.mail.smtp.auth=true
-
-spring.mail.properties.mail.smtp.starttls.enable=true
+    spring.mail.host=smtp.gmail.com
+    spring.mail.port=587
+    spring.mail.username=your_email@gmail.com
+    spring.mail.password=app_password
+    spring.mail.properties.mail.smtp.auth=true
+    spring.mail.properties.mail.smtp.starttls.enable=true
 
 ⚠️ Use Gmail App Password, not your real password.
 
 4️⃣ Run Application
-mvn spring-boot:run
+  mvn spring-boot:run
 
 Open:
-http://localhost:8080
+   http://localhost:8080
 
 
 🧪ADMIN ACCOUNT SETUP
