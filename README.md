@@ -179,7 +179,8 @@ update application.properties:
 ⚠️ Use Gmail App Password, not your real password.
 
 4️⃣ Run Application
-  mvn spring-boot:run
+
+    mvn spring-boot:run
 
 Open:
    http://localhost:8080
