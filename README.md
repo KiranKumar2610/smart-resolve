@@ -10,12 +10,19 @@ It supports role-based access (USER / ADMIN), real-time complaint tracking, admi
 👤 USER FEATURES
 
 Register & login with JWT authentication
+
 Create complaints
+
 View personal complaints
+
 Edit complaints until resolved
+
 Filter complaints by:
+
 ID
+
 Title
+
 Status (OPEN / IN_PROGRESS / RESOLVED / REJECTED)
 
 🛠 ADMIN FEATURES
