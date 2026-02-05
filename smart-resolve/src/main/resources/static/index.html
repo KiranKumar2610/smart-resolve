@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Smart Resolve</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/app.css">
+
+</head>
+<body>
+<script>
+    const token = localStorage.getItem("jwt");
+
+    if (token) {
+        window.location.replace("/complaints.html");
+    } else {
+        window.location.replace("/login.html");
+    }
+</script>
+</body>
+</html>

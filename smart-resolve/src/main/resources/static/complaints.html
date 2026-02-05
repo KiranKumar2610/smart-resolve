@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Complaints | Smart Resolve</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/app.css">
+
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">Smart Resolve</div>
+
+        <nav>
+            <a class="active">My Complaints</a>
+            <a href="/createcomplaint.html">New Complaint</a>
+        </nav>
+
+        <button class="logout" onclick="logout()">Logout</button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="page-header" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+            <div>
+                <h1>My Complaints</h1>
+                <p style="color:var(--muted)">Track and manage your submitted issues</p>
+            </div>
+
+            <div class="actions" style="display:flex;gap:12px;">
+                <button class="btn btn-outline" onclick="toggleTheme()">🌙</button>
+                <a class="btn btn-primary" href="/createcomplaint.html">+ New</a>
+            </div>
+        </header>
+
+        <!-- CONTENT -->
+        <section class="table-card">
+
+            <!-- FILTERS -->
+            <div class="table-actions">
+                <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search by ID or title..."
+                />
+
+                <select id="statusFilter">
+                    <option value="">All Status</option>
+                    <option value="OPEN">OPEN</option>
+                    <option value="IN_PROGRESS">IN PROGRESS</option>
+                    <option value="RESOLVED">RESOLVED</option>
+                    <option value="REJECTED">REJECTED</option>
+                </select>
+            </div>
+
+            <!-- TABLE -->
+            <table>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+
+                <tbody id="complaintsTable">
+                <!-- Skeleton -->
+                <tr>
+                    <td><div class="skeleton" style="width:40px"></div></td>
+                    <td><div class="skeleton" style="width:160px"></div></td>
+                    <td><div class="skeleton" style="width:80px"></div></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p id="emptyState" class="empty" style="display:none;text-align:center;margin:20px;color:var(--muted)">
+                No complaints found.
+            </p>
+
+        </section>
+    </main>
+</div>
+
+<!-- DRAWER OVERLAY -->
+<div id="drawerOverlay" class="drawer-overlay hidden"></div>
+
+<!-- DRAWER -->
+<div id="complaintDrawer" class="drawer">
+    <div class="drawer-header">
+        <h3 id="drawerTitle">Complaint</h3>
+        <button class="drawer-close" onclick="closeDrawer()">✕</button>
+    </div>
+
+    <div class="drawer-body">
+        <div class="drawer-item">
+            <span class="label">ID</span>
+            <p id="drawerId"></p>
+        </div>
+
+        <div class="drawer-item">
+            <span class="label">Status</span>
+            <span id="drawerStatus" class="badge"></span>
+        </div>
+
+        <div class="drawer-item">
+            <span class="label">Description</span>
+            <p id="drawerDescription"></p>
+        </div>
+
+        <div class="drawer-item">
+            <span class="label">Created</span>
+            <p id="drawerCreated"></p>
+        </div>
+    </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="/js/complaints.js"></script>
+</body>
+</html>

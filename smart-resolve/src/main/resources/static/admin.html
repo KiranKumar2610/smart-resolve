@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | Smart Resolve</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/app.css">
+
+</head>
+
+<body>
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">Smart Resolve</div>
+
+        <nav>
+
+            <a href="/createcomplaint.html" class="nav-link">➕ New Complaint</a>
+            <a class="nav-link active">🛠 Admin</a>
+        </nav>
+
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- PAGE HEADER -->
+        <header class="page-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p style="color:var(--muted)">Manage and resolve user complaints</p>
+            </div>
+
+            <button class="btn btn-outline" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- BULK ACTION BAR -->
+        <div id="bulkBar" class="bulk-bar hidden">
+            <span id="selectedCount">0 selected</span>
+
+            <div class="bulk-actions">
+                <button class="btn btn-primary" onclick="bulkUpdate('RESOLVED')">
+                    Mark Resolved
+                </button>
+                <button class="btn btn-danger" onclick="bulkUpdate('REJECTED')">
+                    Reject
+                </button>
+            </div>
+        </div>
+
+        <!-- METRICS -->
+        <section class="metrics">
+            <div class="metric">
+                <h3 id="totalCount">–</h3>
+                <span>Total</span>
+            </div>
+            <div class="metric">
+                <h3 id="openCount">–</h3>
+                <span>Open</span>
+            </div>
+            <div class="metric">
+                <h3 id="resolvedCount">–</h3>
+                <span>Resolved</span>
+            </div>
+        </section>
+
+        <!-- TABLE -->
+        <section class="table-card">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAll"></th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>User</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+
+                <tbody id="complaintsBody">
+                <tr>
+                    <td colspan="6" class="text-center">Loading complaints…</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+            <button class="btn" onclick="prevPage()">← Prev</button>
+            <span id="pageInfo">Page 1</span>
+            <button class="btn" onclick="nextPage()">Next →</button>
+        </div>
+
+    </main>
+</div>
+
+<div id="toast"></div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
